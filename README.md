@@ -1,2 +1,1 @@
-# Inf---121
-Clase punto 
+# Inf -121 
