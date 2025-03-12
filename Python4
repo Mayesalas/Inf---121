@@ -1,0 +1,29 @@
+import math
+
+class FiguraGeometrica:
+    def area(self, radio=None, base=None, altura=None, es_triangulo=None, base_mayor=None, base_menor=None, perimetro=None, apotema=None, poligono=None):
+        if radio is not None:
+            return math.pi * radio * radio
+        elif base is not None and altura is not None and es_triangulo is None:
+            return base * altura
+        elif base is not None and altura is not None and es_triangulo is True:
+            return (base * altura) / 2
+        elif base_mayor is not None and base_menor is not None and altura is not None:
+            return ((base_mayor + base_menor) / 2) * altura
+        elif perimetro is not None and apotema is not None and poligono is not None:
+            return (perimetro * apotema) / 2
+        else:
+            raise ValueError("Invalid parameters provided")
+
+if __name__ == "__main__":
+    f1 = FiguraGeometrica()
+    f2 = FiguraGeometrica()
+    f3 = FiguraGeometrica()
+    f4 = FiguraGeometrica()
+    f5 = FiguraGeometrica()
+
+    print("Circulo", f1.area(radio=1))
+    print("Rectangulo", f2.area(base=2, altura=3))
+    print("Triangulo", f3.area(base=5, altura=6, es_triangulo=True))
+    print("Trapecio", f4.area(base_mayor=4, base_menor=3, altura=2))
+    print("Poligono", f5.area(perimetro=5, apotema=7, poligono="poligono"))
